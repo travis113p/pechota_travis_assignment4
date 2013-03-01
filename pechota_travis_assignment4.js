@@ -5,44 +5,23 @@ Function Library*/
 
 var myLibrary = function() {
 
-//check numeric function
-	var checkNumeric = function(val) {
-		if(isNaN(val)){
-			return false;
-		} else {
-			return true;
-		}
-	}
-
-//check name function
-	var areYouLee = function(val){
-		if (val === "Lee") {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
 //check email
-	var checkEmail = function(val) {
-
-		var strLen = val.length
-		for (var i=0; 1 <= strLen; i++) {
-			if (val.substring(i, i+1) === "-") {
-				return i;
-			}
-		}
-
+var checkEmail = function (val) {
+	var atSign = val.lastIndexOf("@")
+	var period = val.lastIndexOf(".")
+	if (atSign < period && atSign != 0) {
+		return true
+	} else {
+		return false
 	}
+}
 
 
-//check email
-var checkEmail = 
 
 //return object
 return {
-	"checkNumeric": checkNumeric,
-	"checkString": checkString
+	"checkEmail": checkEmail,
+	
 }
 
 
@@ -50,4 +29,4 @@ return {
 
 var newLib = new myLibrary();
 
-console.log("Is this a number?" + newLib.checkNumeric(156));
+console.log("Is this an email? " + newLib.checkEmail("travis113p"));
