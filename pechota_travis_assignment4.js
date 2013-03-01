@@ -27,10 +27,22 @@ var checkPhone = function (val) {
 	}
 }
 
+//check url
+var checkUrl = function (val) {
+	var http = val.substring(0,7)
+	var https = val.substring(0,8)
+	if (http === "http://" || https === "https://") {
+		return true
+	} else {
+		return false
+	}
+}
+
 //return object
 return {
 	"checkEmail": checkEmail,
 	"checkPhone": checkPhone,
+	"checkUrl": checkUrl
 	
 }
 
@@ -41,3 +53,4 @@ var newLib = new myLibrary();
 
 console.log("Is this an email? " + newLib.checkEmail("travis113p"));
 console.log("Is this a phone number? " + newLib.checkPhone("248-245-3703"));
+console.log("Is this a URL? " + newLib.checkUrl("https://www.fullsail.edu"))
