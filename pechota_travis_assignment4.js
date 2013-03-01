@@ -48,7 +48,19 @@ var titleCase = function (val) {
     return pieces.join(" ");
 }
 
-
+//days between
+var daysTilXmas = function (val) {
+	var today = new Date (2013, 02, 28)
+	var christmas = new Date (2013, 12, 25)
+	var days = 100*60*60*24
+	christmas = christmas.getTime()
+	today = today.getTime()
+	if (today < christmas) {
+		var inBetween = ((christmas - today) / (days));
+		return inBetween
+		return daysTilXmas
+	}
+}
 
 
 //return object
@@ -56,7 +68,8 @@ return {
 	"checkEmail": checkEmail,
 	"checkPhone": checkPhone,
 	"checkUrl": checkUrl,
-	"titleCase": titleCase
+	"titleCase": titleCase,
+	"daysTilXmas": daysTilXmas
 	
 }
 
@@ -69,3 +82,4 @@ console.log("Is this an email? " + newLib.checkEmail("travis113p"));
 console.log("Is this a phone number? " + newLib.checkPhone("248-245-3703"));
 console.log("Is this a URL? " + newLib.checkUrl("https://www.fullsail.edu"))
 console.log("Title case me: " + newLib.titleCase("hello person you."))
+console.log(dateSince)
