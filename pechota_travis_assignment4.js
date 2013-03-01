@@ -38,11 +38,21 @@ var checkUrl = function (val) {
 	}
 }
 
+//title case
+var titleCase = function (val) {
+	var firstLetter = val.charAt(0)
+	var postSpace = val.indexOf(" ")+1
+	return firstLetter.toUpperCase();
+}
+
+
+
 //return object
 return {
 	"checkEmail": checkEmail,
 	"checkPhone": checkPhone,
-	"checkUrl": checkUrl
+	"checkUrl": checkUrl,
+	"titleCase": titleCase
 	
 }
 
@@ -54,3 +64,4 @@ var newLib = new myLibrary();
 console.log("Is this an email? " + newLib.checkEmail("travis113p"));
 console.log("Is this a phone number? " + newLib.checkPhone("248-245-3703"));
 console.log("Is this a URL? " + newLib.checkUrl("https://www.fullsail.edu"))
+console.log("Title case me " + newLib.titleCase("hello person you."))
